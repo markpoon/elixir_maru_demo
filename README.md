@@ -1,4 +1,11 @@
-ElixirMaruDemo
+Requirements
+=============
+
+Elixir (brew install elixir)
+
+Run
 ==============
 
-** TODO: Add description **
+mix deps.get
+iex -S mix
+curl localhost:8880/key/generator
