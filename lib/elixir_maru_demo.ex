@@ -1,0 +1,2 @@
+defmodule ElixirMaruDemo do
+end
