@@ -27,6 +27,7 @@ defmodule ElixirMaruDemo.Mixfile do
   #
   # Type `mix help deps` for more examples and options
   defp deps do
-    [ {:maru, "~> 0.3.0"} ]
+    [ {:maru, "~> 0.3.0"},
+      {:exredis, ">= 0.1.1"} ]
   end
 end
