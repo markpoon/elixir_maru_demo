@@ -1,14 +1,17 @@
 Requirements
 =============
 
-Elixir `brew install elixir`
+Install Elixir & Redis
 
-Redis `brew install Redis`
+```
+brew install elixir
+brew install Redis
+```
 
 Run
 ==============
 
-Start the redis
+Start the redis server
 
 `redis-server`
 
