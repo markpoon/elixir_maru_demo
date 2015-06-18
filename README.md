@@ -14,10 +14,9 @@ Start the redis
 
 Start the Elixir application
 
-```mix deps.get
-
+```
+mix deps.get
 iex -S mix
-
 curl -X POST localhost:8880/key/ABC --data "value=123"
-
-curl localhost:8880/key/ABC```
+curl localhost:8880/key/ABC
+```
