@@ -5,6 +5,7 @@ defmodule ElixirMaruDemo.Mixfile do
     [app: :elixir_maru_demo,
      version: "0.0.1",
      elixir: "~> 1.0",
+     escript: script_cfg,
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps]
@@ -29,5 +30,8 @@ defmodule ElixirMaruDemo.Mixfile do
   defp deps do
     [ {:maru, "~> 0.3.0"},
       {:exredis, ">= 0.1.1"} ]
+  end
+  defp script_cfg do
+    [ main_module: ElixirMaruDemo ]
   end
 end

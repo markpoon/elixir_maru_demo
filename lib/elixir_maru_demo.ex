@@ -25,7 +25,9 @@ defmodule ElixirMaruDemo do
   end
 
   def error(conn, e) do
-    IEx.pry
     "server error" |> text(500)
+  end
+  def main(args) do
+    :timer.sleep(:infinity)
   end
 end

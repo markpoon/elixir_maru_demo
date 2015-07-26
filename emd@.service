@@ -1,0 +1,16 @@
+[Unit]
+Description=ElixirMaruDemo
+After=docker.service
+Requires=docker.service
+After=etcd.service
+Requires=etcd.service
+
+[Service]
+ExecStartPre=-/usr/bin/docker kill emd-%i
+ExecStartPre=-/usr/bin/docker rm emd-%i
+ExecStartPre=-/usr/bin/docker build ~/share/elixir_maru_demo/Dockerfile
+ExecStart=/usr/bin/docker run --rm --name emd-%i -p 8080:80 emd:latest
+ExecStop=/usr/bin/docker stop emd-%i
+
+[X-Fleet]
+Conflicts=emd@*.service

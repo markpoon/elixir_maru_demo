@@ -1,0 +1,18 @@
+# grab image
+FROM trenpixster/elixir
+# make working dir
+RUN mkdir -p /usr/src/app 
+WORKDIR /usr/src/app/
+COPY mix.exs /usr/src/app/ 
+COPY config /usr/src/app/config 
+COPY lib /usr/src/app/lib 
+COPY test /usr/src/app/test
+# build dependencies and app
+RUN mix local.hex 
+RUN mix deps.get 
+RUN mix deps.compile 
+RUN mix test 
+RUN mix compile 
+EXPOSE 8080
+# launch
+CMD ["mix", "run", "--no-halt"]
